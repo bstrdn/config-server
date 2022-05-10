@@ -3,18 +3,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/bstrdn/config-repo
-          username: bstrdn
-          password:
-  application:
-    name: config-server
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://192.168.88.222:8761/eureka
-  instance:
-    preferIpAddress: true
-
+          uri: ${CLOUD_CONFIG_SERVER_GIT_URI}
+          username: ${CLOUD_CONFIG_SERVER_GIT_USERNAME}
+          password: ${CLOUD_CONFIG_SERVER_GIT_PASSWORD}
 server:
-  port: 8888
+  port: 80
