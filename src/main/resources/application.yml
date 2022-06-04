@@ -1,4 +1,9 @@
+server:
+  port: 8888
+
 spring:
+  application:
+    name: config-server
   cloud:
     config:
       server:
@@ -6,5 +11,10 @@ spring:
           uri: ${CLOUD_CONFIG_SERVER_GIT_URI}
           username: ${CLOUD_CONFIG_SERVER_GIT_USERNAME}
           password: ${CLOUD_CONFIG_SERVER_GIT_PASSWORD}
-server:
-  port: 80
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA}
+  instance:
+    preferIpAddress: true
